@@ -1,0 +1,62 @@
+<xsl:stylesheet version="1.0"
+  xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+  xmlns:sif="http://www.sifassociation.org/au/datamodel/3.4"
+  xpath-default-namespace="http://www.sifassociation.org/au/datamodel/3.4">
+  <xsl:output omit-xml-declaration="yes"/>
+<!--  <xsl:strip-space elements="*"/> -->
+  <xsl:template match="node()|@*">
+    <xsl:copy>
+      <xsl:apply-templates select="node()|@*"/>
+    </xsl:copy>
+  </xsl:template>
+
+  <xsl:template match="//sif:StudentPersonal/sif:AlertMessages/sif:AlertMessage"/>
+  <xsl:template match="//sif:StudentPersonal/sif:AlertMessages/sif:AlertMessage/@sif:Type"/>
+  <xsl:template match="//sif:StudentPersonal/sif:MedicalAlertMessages/sif:MedicalAlertMessage"/>
+  <xsl:template match="//sif:StudentPersonal/sif:StateProvinceId"/>
+  <xsl:template match="//sif:StudentDailyAttendance/sif:AttendanceCode"/>
+  <xsl:template match="//sif:StudentDailyAttendance/sif:AttendanceCode/sif:Code"/>
+  <xsl:template match="//sif:StudentDailyAttendance/sif:AttendanceNote"/>
+  <xsl:template match="//sif:StudentParticipation"/>
+  <xsl:template match="//sif:StudentPeriodAttendance/sif:AttendanceCode"/>
+  <xsl:template match="//sif:StudentPeriodAttendance/sif:AttendanceCode/sif:Code"/>
+  <xsl:template match="//sif:StudentPeriodAttendance/sif:AttendanceComment"/>
+  <xsl:template match="//sif:StudentContactRelationship/sif:ContactFlags/sif:InterventionOrder"/>
+  <xsl:template match="//sif:StudentSDTN"/>
+  <xsl:template match="//sif:SummaryEnrollmentInfo"/>
+  <xsl:template match="//sif:AssessmentRegistration"/>
+  <xsl:template match="//sif:Identity"/>
+  <xsl:template match="//sif:StudentContactRelationship/sif:ContactFlags/sif:ParentLegalGuardian"/>
+  <xsl:template match="//sif:StudentContactRelationship/sif:ContactFlags/sif:PickupRights"/>
+  <xsl:template match="//sif:StudentContactRelationship/sif:ContactFlags/sif:LivesWith"/>
+  <xsl:template match="//sif:StudentContactRelationship/sif:ContactFlags/sif:AccessToRecords"/>
+  <xsl:template match="//sif:StudentContactRelationship/sif:ContactFlags/sif:ReceivesAssessmentReport"/>
+  <xsl:template match="//sif:StudentContactRelationship/sif:ContactFlags/sif:EmergencyContact"/>
+  <xsl:template match="//sif:StudentContactRelationship/sif:ContactFlags/sif:HasCustody"/>
+  <xsl:template match="//sif:StudentContactRelationship/sif:ContactFlags/sif:DisciplinaryContact"/>
+  <xsl:template match="//sif:StudentContactRelationship/sif:ContactFlags/sif:AttendanceContact"/>
+  <xsl:template match="//sif:StudentContactRelationship/sif:ContactFlags/sif:PrimaryCareProvider"/>
+  <xsl:template match="//sif:StudentContactRelationship/sif:ContactFlags/sif:FeesBilling"/>
+  <xsl:template match="//sif:StudentContactRelationship/sif:ContactFlags/sif:FamilyMail"/>
+  <xsl:template match="//sif:StudentPersonal/sif:GiftedTalented"/>
+  <xsl:template match="//sif:StudentPersonal/sif:EconomicDisadvantage"/>
+  <xsl:template match="//sif:StudentPersonal/sif:ESL"/>
+  <xsl:template match="//sif:StudentPersonal/sif:YoungCarersRole"/>
+  <xsl:template match="//sif:StudentPersonal/sif:Disability"/>
+  <xsl:template match="//sif:StudentPersonal/sif:IntegrationAide"/>
+  <xsl:template match="//sif:StudentPersonal/sif:PrePrimaryEducation"/>
+  <xsl:template match="//sif:StudentSchoolEnrollment/sif:ExitStatus/sif:Code"/>
+  <xsl:template match="//sif:StudentSchoolEnrollment/sif:ExitType/sif:Code"/>
+  <xsl:template match="//sif:StudentSchoolEnrollment/sif:RecordClosureReason"/>
+  <xsl:template match="//sif:StudentSnapshot"/>
+  <xsl:template match="//sif:PersonInfo/sif:Demographics/sif:BirthDate"/>
+  <xsl:template match="//sif:PersonInfo/sif:Demographics/sif:Religion/sif:Code"/>
+  <xsl:template match="//sif:PersonInfo/sif:Demographics/sif:ReligiousEventList/sif:ReligiousEvent/sif:Date"/>
+  <xsl:template match="//sif:PersonInfo/sif:Demographics/sif:ReligiousRegion"/>
+  <xsl:template match="//sif:PersonInfo/sif:Demographics/sif:VisaSubClass"/>
+  <xsl:template match="//sif:PersonInfo/sif:Demographics/sif:VisaStatisticalCode"/>
+  <xsl:template match="//sif:PersonInfo/sif:Demographics/sif:ImmunizationCertificateStatus"/>
+  <xsl:template match="//sif:PersonInfo/sif:Demographics/sif:CulturalBackground"/>
+  <xsl:template match="//sif:PersonInfo/sif:AddressList"/>
+  <xsl:template match="//sif:PersonInfo/sif:PhoneNumberList"/>
+</xsl:stylesheet>

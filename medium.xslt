@@ -1,5 +1,7 @@
 <xsl:stylesheet version="1.0"
-  xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+  xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+  xmlns:sif="http://www.sifassociation.org/au/datamodel/3.4"
+  xpath-default-namespace="http://www.sifassociation.org/au/datamodel/3.4">
   <xsl:output omit-xml-declaration="yes"/>
 <!--  <xsl:strip-space elements="*"/> -->
   <xsl:template match="node()|@*">
@@ -8,399 +10,351 @@
     </xsl:copy>
   </xsl:template>
 
-  <xsl:template match="//StudentPersonal/AlertMessages/AlertMessage">
+  <xsl:template match="//sif:StudentPersonal/sif:AlertMessages/sif:AlertMessage">
     <xsl:copy select="."> 
       <xsl:apply-templates select="@*|*|comment()|processing-instruction()|text()"/>
     </xsl:copy>
   </xsl:template>
-  <xsl:template match="//StudentPersonal/AlertMessages/AlertMessage//text()[normalize-space(.)]">
+  <xsl:template match="//sif:StudentPersonal/sif:AlertMessages/sif:AlertMessage//text()[normalize-space(.)]">
           <xsl:text>ZZREDACTED</xsl:text>
   </xsl:template>
-  <xsl:template match="//StudentPersonal/AlertMessages/AlertMessage/@Type">
+  <xsl:template match="//sif:StudentPersonal/sif:AlertMessages/sif:AlertMessage/@sif:Type">
     <xsl:attribute name="{name()}">
     <xsl:text>Other</xsl:text>
     </xsl:attribute>
   </xsl:template>
-  <xsl:template match="//StudentPersonal/MedicalAlertMessages/MedicalAlertMessage">
+  <xsl:template match="//sif:StudentPersonal/sif:MedicalAlertMessages/sif:MedicalAlertMessage">
     <xsl:copy select="."> 
       <xsl:apply-templates select="@*|*|comment()|processing-instruction()|text()"/>
     </xsl:copy>
   </xsl:template>
-  <xsl:template match="//StudentPersonal/MedicalAlertMessages/MedicalAlertMessage//text()[normalize-space(.)]">
+  <xsl:template match="//sif:StudentPersonal/sif:MedicalAlertMessages/sif:MedicalAlertMessage//text()[normalize-space(.)]">
           <xsl:text>ZZREDACTED</xsl:text>
   </xsl:template>
-  <xsl:template match="//StudentPersonal/StateProvinceId">
+  <xsl:template match="//sif:StudentPersonal/sif:StateProvinceId">
     <xsl:copy select="."> 
       <xsl:apply-templates select="@*|*|comment()|processing-instruction()|text()"/>
     </xsl:copy>
   </xsl:template>
-  <xsl:template match="//StudentPersonal/StateProvinceId//text()[normalize-space(.)]">
+  <xsl:template match="//sif:StudentPersonal/sif:StateProvinceId//text()[normalize-space(.)]">
           <xsl:text>ZZREDACTED</xsl:text>
   </xsl:template>
-  <xsl:template match="//StudentDailyAttendance/AttendanceCode">
+  <xsl:template match="//sif:StudentDailyAttendance/sif:AttendanceCode">
     <xsl:copy select="."> 
       <xsl:apply-templates select="@*|*|comment()|processing-instruction()|text()"/>
     </xsl:copy>
   </xsl:template>
-  <xsl:template match="//StudentDailyAttendance/AttendanceCode//text()[normalize-space(.)]">
+  <xsl:template match="//sif:StudentDailyAttendance/sif:AttendanceCode//text()[normalize-space(.)]">
           <xsl:text>ZZREDACTED</xsl:text>
   </xsl:template>
-  <xsl:template match="//StudentDailyAttendance/AttendanceCode/Code">
+  <xsl:template match="//sif:StudentDailyAttendance/sif:AttendanceCode/sif:Code">
     <xsl:copy select="."> 
       <xsl:apply-templates select="@*|*|comment()|processing-instruction()|text()"/>
     </xsl:copy>
   </xsl:template>
-  <xsl:template match="//StudentDailyAttendance/AttendanceCode/Code//text()[normalize-space(.)]">
+  <xsl:template match="//sif:StudentDailyAttendance/sif:AttendanceCode/sif:Code//text()[normalize-space(.)]">
           <xsl:text>ZZREDACTED</xsl:text>
   </xsl:template>
-  <xsl:template match="//StudentDailyAttendance/AttendanceNote">
+  <xsl:template match="//sif:StudentDailyAttendance/sif:AttendanceNote">
     <xsl:copy select="."> 
       <xsl:apply-templates select="@*|*|comment()|processing-instruction()|text()"/>
     </xsl:copy>
   </xsl:template>
-  <xsl:template match="//StudentDailyAttendance/AttendanceNote//text()[normalize-space(.)]">
+  <xsl:template match="//sif:StudentDailyAttendance/sif:AttendanceNote//text()[normalize-space(.)]">
           <xsl:text>ZZREDACTED</xsl:text>
   </xsl:template>
-  <xsl:template match="//StudentParticipation"/>
-  <xsl:template match="//StudentPeriodAttendance/AttendanceCode">
+  <xsl:template match="//sif:StudentParticipation"/>
+  <xsl:template match="//sif:StudentPeriodAttendance/sif:AttendanceCode">
     <xsl:copy select="."> 
       <xsl:apply-templates select="@*|*|comment()|processing-instruction()|text()"/>
     </xsl:copy>
   </xsl:template>
-  <xsl:template match="//StudentPeriodAttendance/AttendanceCode//text()[normalize-space(.)]">
+  <xsl:template match="//sif:StudentPeriodAttendance/sif:AttendanceCode//text()[normalize-space(.)]">
           <xsl:text>ZZREDACTED</xsl:text>
   </xsl:template>
-  <xsl:template match="//StudentPeriodAttendance/AttendanceCode/Code">
+  <xsl:template match="//sif:StudentPeriodAttendance/sif:AttendanceCode/sif:Code">
     <xsl:copy select="."> 
       <xsl:apply-templates select="@*|*|comment()|processing-instruction()|text()"/>
     </xsl:copy>
   </xsl:template>
-  <xsl:template match="//StudentPeriodAttendance/AttendanceCode/Code//text()[normalize-space(.)]">
+  <xsl:template match="//sif:StudentPeriodAttendance/sif:AttendanceCode/sif:Code//text()[normalize-space(.)]">
           <xsl:text>ZZREDACTED</xsl:text>
   </xsl:template>
-  <xsl:template match="//StudentPeriodAttendance/AttendanceComment">
+  <xsl:template match="//sif:StudentPeriodAttendance/sif:AttendanceComment">
     <xsl:copy select="."> 
       <xsl:apply-templates select="@*|*|comment()|processing-instruction()|text()"/>
     </xsl:copy>
   </xsl:template>
-  <xsl:template match="//StudentPeriodAttendance/AttendanceComment//text()[normalize-space(.)]">
+  <xsl:template match="//sif:StudentPeriodAttendance/sif:AttendanceComment//text()[normalize-space(.)]">
           <xsl:text>ZZREDACTED</xsl:text>
   </xsl:template>
-  <xsl:template match="//StudentContactRelationship/ContactFlags/InterventionOrder">
+  <xsl:template match="//sif:StudentContactRelationship/sif:ContactFlags/sif:InterventionOrder">
     <xsl:copy select="."> 
       <xsl:apply-templates select="@*|*|comment()|processing-instruction()|text()"/>
     </xsl:copy>
   </xsl:template>
-  <xsl:template match="//StudentContactRelationship/ContactFlags/InterventionOrder//text()[normalize-space(.)]">
+  <xsl:template match="//sif:StudentContactRelationship/sif:ContactFlags/sif:InterventionOrder//text()[normalize-space(.)]">
           <xsl:text>ZZREDACTED</xsl:text>
   </xsl:template>
-  <xsl:template match="//StudentSDTN"/>
-  <xsl:template match="//SummaryEnrollmentInfo"/>
-  <xsl:template match="//AssessmentRegistration"/>
-  <xsl:template match="//Identity"/>
-  <xsl:template match="//StudentContactRelationship/ContactFlags/ParentLegalGuardian">
+  <xsl:template match="//sif:StudentSDTN"/>
+  <xsl:template match="//sif:SummaryEnrollmentInfo"/>
+  <xsl:template match="//sif:AssessmentRegistration"/>
+  <xsl:template match="//sif:Identity"/>
+  <xsl:template match="//sif:StudentContactRelationship/sif:ContactFlags/sif:ParentLegalGuardian">
     <xsl:copy select="."> 
       <xsl:apply-templates select="@*|*|comment()|processing-instruction()|text()"/>
     </xsl:copy>
   </xsl:template>
-  <xsl:template match="//StudentContactRelationship/ContactFlags/ParentLegalGuardian//text()[normalize-space(.)]">
+  <xsl:template match="//sif:StudentContactRelationship/sif:ContactFlags/sif:ParentLegalGuardian//text()[normalize-space(.)]">
           <xsl:text>ZZREDACTED</xsl:text>
   </xsl:template>
-  <xsl:template match="//StudentContactRelationship/ContactFlags/PickupRights">
+  <xsl:template match="//sif:StudentContactRelationship/sif:ContactFlags/sif:PickupRights">
     <xsl:copy select="."> 
       <xsl:apply-templates select="@*|*|comment()|processing-instruction()|text()"/>
     </xsl:copy>
   </xsl:template>
-  <xsl:template match="//StudentContactRelationship/ContactFlags/PickupRights//text()[normalize-space(.)]">
+  <xsl:template match="//sif:StudentContactRelationship/sif:ContactFlags/sif:PickupRights//text()[normalize-space(.)]">
           <xsl:text>ZZREDACTED</xsl:text>
   </xsl:template>
-  <xsl:template match="//StudentContactRelationship/ContactFlags/LivesWith">
+  <xsl:template match="//sif:StudentContactRelationship/sif:ContactFlags/sif:LivesWith">
     <xsl:copy select="."> 
       <xsl:apply-templates select="@*|*|comment()|processing-instruction()|text()"/>
     </xsl:copy>
   </xsl:template>
-  <xsl:template match="//StudentContactRelationship/ContactFlags/LivesWith//text()[normalize-space(.)]">
+  <xsl:template match="//sif:StudentContactRelationship/sif:ContactFlags/sif:LivesWith//text()[normalize-space(.)]">
           <xsl:text>ZZREDACTED</xsl:text>
   </xsl:template>
-  <xsl:template match="//StudentContactRelationship/ContactFlags/AccessToRecords">
+  <xsl:template match="//sif:StudentContactRelationship/sif:ContactFlags/sif:AccessToRecords">
     <xsl:copy select="."> 
       <xsl:apply-templates select="@*|*|comment()|processing-instruction()|text()"/>
     </xsl:copy>
   </xsl:template>
-  <xsl:template match="//StudentContactRelationship/ContactFlags/AccessToRecords//text()[normalize-space(.)]">
+  <xsl:template match="//sif:StudentContactRelationship/sif:ContactFlags/sif:AccessToRecords//text()[normalize-space(.)]">
           <xsl:text>ZZREDACTED</xsl:text>
   </xsl:template>
-  <xsl:template match="//StudentContactRelationship/ContactFlags/ReceivesAssessmentReport">
+  <xsl:template match="//sif:StudentContactRelationship/sif:ContactFlags/sif:ReceivesAssessmentReport">
     <xsl:copy select="."> 
       <xsl:apply-templates select="@*|*|comment()|processing-instruction()|text()"/>
     </xsl:copy>
   </xsl:template>
-  <xsl:template match="//StudentContactRelationship/ContactFlags/ReceivesAssessmentReport//text()[normalize-space(.)]">
+  <xsl:template match="//sif:StudentContactRelationship/sif:ContactFlags/sif:ReceivesAssessmentReport//text()[normalize-space(.)]">
           <xsl:text>ZZREDACTED</xsl:text>
   </xsl:template>
-  <xsl:template match="//StudentContactRelationship/ContactFlags/EmergencyContact">
+  <xsl:template match="//sif:StudentContactRelationship/sif:ContactFlags/sif:EmergencyContact">
     <xsl:copy select="."> 
       <xsl:apply-templates select="@*|*|comment()|processing-instruction()|text()"/>
     </xsl:copy>
   </xsl:template>
-  <xsl:template match="//StudentContactRelationship/ContactFlags/EmergencyContact//text()[normalize-space(.)]">
+  <xsl:template match="//sif:StudentContactRelationship/sif:ContactFlags/sif:EmergencyContact//text()[normalize-space(.)]">
           <xsl:text>ZZREDACTED</xsl:text>
   </xsl:template>
-  <xsl:template match="//StudentContactRelationship/ContactFlags/HasCustody">
+  <xsl:template match="//sif:StudentContactRelationship/sif:ContactFlags/sif:HasCustody">
     <xsl:copy select="."> 
       <xsl:apply-templates select="@*|*|comment()|processing-instruction()|text()"/>
     </xsl:copy>
   </xsl:template>
-  <xsl:template match="//StudentContactRelationship/ContactFlags/HasCustody//text()[normalize-space(.)]">
+  <xsl:template match="//sif:StudentContactRelationship/sif:ContactFlags/sif:HasCustody//text()[normalize-space(.)]">
           <xsl:text>ZZREDACTED</xsl:text>
   </xsl:template>
-  <xsl:template match="//StudentContactRelationship/ContactFlags/DisciplinaryContact">
+  <xsl:template match="//sif:StudentContactRelationship/sif:ContactFlags/sif:DisciplinaryContact">
     <xsl:copy select="."> 
       <xsl:apply-templates select="@*|*|comment()|processing-instruction()|text()"/>
     </xsl:copy>
   </xsl:template>
-  <xsl:template match="//StudentContactRelationship/ContactFlags/DisciplinaryContact//text()[normalize-space(.)]">
+  <xsl:template match="//sif:StudentContactRelationship/sif:ContactFlags/sif:DisciplinaryContact//text()[normalize-space(.)]">
           <xsl:text>ZZREDACTED</xsl:text>
   </xsl:template>
-  <xsl:template match="//StudentContactRelationship/ContactFlags/AttendanceContact">
+  <xsl:template match="//sif:StudentContactRelationship/sif:ContactFlags/sif:AttendanceContact">
     <xsl:copy select="."> 
       <xsl:apply-templates select="@*|*|comment()|processing-instruction()|text()"/>
     </xsl:copy>
   </xsl:template>
-  <xsl:template match="//StudentContactRelationship/ContactFlags/AttendanceContact//text()[normalize-space(.)]">
+  <xsl:template match="//sif:StudentContactRelationship/sif:ContactFlags/sif:AttendanceContact//text()[normalize-space(.)]">
           <xsl:text>ZZREDACTED</xsl:text>
   </xsl:template>
-  <xsl:template match="//StudentContactRelationship/ContactFlags/PrimaryCareProvider">
+  <xsl:template match="//sif:StudentContactRelationship/sif:ContactFlags/sif:PrimaryCareProvider">
     <xsl:copy select="."> 
       <xsl:apply-templates select="@*|*|comment()|processing-instruction()|text()"/>
     </xsl:copy>
   </xsl:template>
-  <xsl:template match="//StudentContactRelationship/ContactFlags/PrimaryCareProvider//text()[normalize-space(.)]">
+  <xsl:template match="//sif:StudentContactRelationship/sif:ContactFlags/sif:PrimaryCareProvider//text()[normalize-space(.)]">
           <xsl:text>ZZREDACTED</xsl:text>
   </xsl:template>
-  <xsl:template match="//StudentContactRelationship/ContactFlags/FeesBilling">
+  <xsl:template match="//sif:StudentContactRelationship/sif:ContactFlags/sif:FeesBilling">
     <xsl:copy select="."> 
       <xsl:apply-templates select="@*|*|comment()|processing-instruction()|text()"/>
     </xsl:copy>
   </xsl:template>
-  <xsl:template match="//StudentContactRelationship/ContactFlags/FeesBilling//text()[normalize-space(.)]">
+  <xsl:template match="//sif:StudentContactRelationship/sif:ContactFlags/sif:FeesBilling//text()[normalize-space(.)]">
           <xsl:text>ZZREDACTED</xsl:text>
   </xsl:template>
-  <xsl:template match="//StudentContactRelationship/ContactFlags/FamilyMail">
+  <xsl:template match="//sif:StudentContactRelationship/sif:ContactFlags/sif:FamilyMail">
     <xsl:copy select="."> 
       <xsl:apply-templates select="@*|*|comment()|processing-instruction()|text()"/>
     </xsl:copy>
   </xsl:template>
-  <xsl:template match="//StudentContactRelationship/ContactFlags/FamilyMail//text()[normalize-space(.)]">
+  <xsl:template match="//sif:StudentContactRelationship/sif:ContactFlags/sif:FamilyMail//text()[normalize-space(.)]">
           <xsl:text>ZZREDACTED</xsl:text>
   </xsl:template>
-  <xsl:template match="//StudentPersonal/GiftedTalented">
+  <xsl:template match="//sif:StudentPersonal/sif:GiftedTalented">
     <xsl:copy select="."> 
       <xsl:apply-templates select="@*|*|comment()|processing-instruction()|text()"/>
     </xsl:copy>
   </xsl:template>
-  <xsl:template match="//StudentPersonal/GiftedTalented//text()[normalize-space(.)]">
+  <xsl:template match="//sif:StudentPersonal/sif:GiftedTalented//text()[normalize-space(.)]">
           <xsl:text>ZZREDACTED</xsl:text>
   </xsl:template>
-  <xsl:template match="//StudentPersonal/EconomicDisadvantage">
+  <xsl:template match="//sif:StudentPersonal/sif:EconomicDisadvantage">
     <xsl:copy select="."> 
       <xsl:apply-templates select="@*|*|comment()|processing-instruction()|text()"/>
     </xsl:copy>
   </xsl:template>
-  <xsl:template match="//StudentPersonal/EconomicDisadvantage//text()[normalize-space(.)]">
+  <xsl:template match="//sif:StudentPersonal/sif:EconomicDisadvantage//text()[normalize-space(.)]">
           <xsl:text>ZZREDACTED</xsl:text>
   </xsl:template>
-  <xsl:template match="//StudentPersonal/ESL">
+  <xsl:template match="//sif:StudentPersonal/sif:ESL">
     <xsl:copy select="."> 
       <xsl:apply-templates select="@*|*|comment()|processing-instruction()|text()"/>
     </xsl:copy>
   </xsl:template>
-  <xsl:template match="//StudentPersonal/ESL//text()[normalize-space(.)]">
+  <xsl:template match="//sif:StudentPersonal/sif:ESL//text()[normalize-space(.)]">
           <xsl:text>ZZREDACTED</xsl:text>
   </xsl:template>
-  <xsl:template match="//StudentPersonal/YoungCarersRole">
+  <xsl:template match="//sif:StudentPersonal/sif:YoungCarersRole">
     <xsl:copy select="."> 
       <xsl:apply-templates select="@*|*|comment()|processing-instruction()|text()"/>
     </xsl:copy>
   </xsl:template>
-  <xsl:template match="//StudentPersonal/YoungCarersRole//text()[normalize-space(.)]">
+  <xsl:template match="//sif:StudentPersonal/sif:YoungCarersRole//text()[normalize-space(.)]">
           <xsl:text>ZZREDACTED</xsl:text>
   </xsl:template>
-  <xsl:template match="//StudentPersonal/Disability">
+  <xsl:template match="//sif:StudentPersonal/sif:Disability">
     <xsl:copy select="."> 
       <xsl:apply-templates select="@*|*|comment()|processing-instruction()|text()"/>
     </xsl:copy>
   </xsl:template>
-  <xsl:template match="//StudentPersonal/Disability//text()[normalize-space(.)]">
+  <xsl:template match="//sif:StudentPersonal/sif:Disability//text()[normalize-space(.)]">
           <xsl:text>ZZREDACTED</xsl:text>
   </xsl:template>
-  <xsl:template match="//StudentPersonal/IntegrationAide">
+  <xsl:template match="//sif:StudentPersonal/sif:IntegrationAide">
     <xsl:copy select="."> 
       <xsl:apply-templates select="@*|*|comment()|processing-instruction()|text()"/>
     </xsl:copy>
   </xsl:template>
-  <xsl:template match="//StudentPersonal/IntegrationAide//text()[normalize-space(.)]">
+  <xsl:template match="//sif:StudentPersonal/sif:IntegrationAide//text()[normalize-space(.)]">
           <xsl:text>ZZREDACTED</xsl:text>
   </xsl:template>
-  <xsl:template match="//StudentPersonal/PrePrimaryEducation">
+  <xsl:template match="//sif:StudentPersonal/sif:PrePrimaryEducation">
     <xsl:copy select="."> 
       <xsl:apply-templates select="@*|*|comment()|processing-instruction()|text()"/>
     </xsl:copy>
   </xsl:template>
-  <xsl:template match="//StudentPersonal/PrePrimaryEducation//text()[normalize-space(.)]">
+  <xsl:template match="//sif:StudentPersonal/sif:PrePrimaryEducation//text()[normalize-space(.)]">
           <xsl:text>ZZREDACTED</xsl:text>
   </xsl:template>
-  <xsl:template match="//StudentSchoolEnrollment/ExitStatus">
+  <xsl:template match="//sif:StudentSchoolEnrollment/sif:ExitStatus/sif:Code">
     <xsl:copy select="."> 
       <xsl:apply-templates select="@*|*|comment()|processing-instruction()|text()"/>
     </xsl:copy>
   </xsl:template>
-  <xsl:template match="//StudentSchoolEnrollment/ExitStatus//text()[normalize-space(.)]">
+  <xsl:template match="//sif:StudentSchoolEnrollment/sif:ExitStatus/sif:Code//text()[normalize-space(.)]">
           <xsl:text>ZZREDACTED</xsl:text>
   </xsl:template>
-  <xsl:template match="//StudentSchoolEnrollment/ExitStatus/Code">
+  <xsl:template match="//sif:StudentSchoolEnrollment/sif:ExitType/sif:Code">
     <xsl:copy select="."> 
       <xsl:apply-templates select="@*|*|comment()|processing-instruction()|text()"/>
     </xsl:copy>
   </xsl:template>
-  <xsl:template match="//StudentSchoolEnrollment/ExitStatus/Code//text()[normalize-space(.)]">
+  <xsl:template match="//sif:StudentSchoolEnrollment/sif:ExitType/sif:Code//text()[normalize-space(.)]">
           <xsl:text>ZZREDACTED</xsl:text>
   </xsl:template>
-  <xsl:template match="//StudentSchoolEnrollment/ExitType">
+  <xsl:template match="//sif:StudentSchoolEnrollment/sif:RecordClosureReason">
     <xsl:copy select="."> 
       <xsl:apply-templates select="@*|*|comment()|processing-instruction()|text()"/>
     </xsl:copy>
   </xsl:template>
-  <xsl:template match="//StudentSchoolEnrollment/ExitType//text()[normalize-space(.)]">
+  <xsl:template match="//sif:StudentSchoolEnrollment/sif:RecordClosureReason//text()[normalize-space(.)]">
           <xsl:text>ZZREDACTED</xsl:text>
   </xsl:template>
-  <xsl:template match="//StudentSchoolEnrollment/ExitType/Code">
+  <xsl:template match="//sif:StudentSnapshot"/>
+  <xsl:template match="//sif:PersonInfo/sif:Demographics/sif:BirthDate">
     <xsl:copy select="."> 
       <xsl:apply-templates select="@*|*|comment()|processing-instruction()|text()"/>
     </xsl:copy>
   </xsl:template>
-  <xsl:template match="//StudentSchoolEnrollment/ExitType/Code//text()[normalize-space(.)]">
-          <xsl:text>ZZREDACTED</xsl:text>
-  </xsl:template>
-  <xsl:template match="//StudentSchoolEnrollment/RecordClosureReason">
-    <xsl:copy select="."> 
-      <xsl:apply-templates select="@*|*|comment()|processing-instruction()|text()"/>
-    </xsl:copy>
-  </xsl:template>
-  <xsl:template match="//StudentSchoolEnrollment/RecordClosureReason//text()[normalize-space(.)]">
-          <xsl:text>ZZREDACTED</xsl:text>
-  </xsl:template>
-  <xsl:template match="//StudentSnapshot"/>
-  <xsl:template match="//PersonInfo/Demographics/BirthDate">
-    <xsl:copy select="."> 
-      <xsl:apply-templates select="@*|*|comment()|processing-instruction()|text()"/>
-    </xsl:copy>
-  </xsl:template>
-  <xsl:template match="//PersonInfo/Demographics/BirthDate//text()[normalize-space(.)]">
+  <xsl:template match="//sif:PersonInfo/sif:Demographics/sif:BirthDate//text()[normalize-space(.)]">
           <xsl:text>1582-10-15</xsl:text>
   </xsl:template>
-  <xsl:template match="//PersonInfo/Demographics/Religion">
+  <xsl:template match="//sif:PersonInfo/sif:Demographics/sif:Religion/sif:Code">
     <xsl:copy select="."> 
       <xsl:apply-templates select="@*|*|comment()|processing-instruction()|text()"/>
     </xsl:copy>
   </xsl:template>
-  <xsl:template match="//PersonInfo/Demographics/Religion//text()[normalize-space(.)]">
+  <xsl:template match="//sif:PersonInfo/sif:Demographics/sif:Religion/sif:Code//text()[normalize-space(.)]">
           <xsl:text>ZZREDACTED</xsl:text>
   </xsl:template>
-  <xsl:template match="//PersonInfo/Demographics/Religion/Code">
+  <xsl:template match="//sif:PersonInfo/sif:Demographics/sif:ReligiousEventList/sif:ReligiousEvent/sif:Date">
     <xsl:copy select="."> 
       <xsl:apply-templates select="@*|*|comment()|processing-instruction()|text()"/>
     </xsl:copy>
   </xsl:template>
-  <xsl:template match="//PersonInfo/Demographics/Religion/Code//text()[normalize-space(.)]">
-          <xsl:text>ZZREDACTED</xsl:text>
-  </xsl:template>
-  <xsl:template match="//PersonInfo/Demographics/ReligiousEventList">
-    <xsl:copy select="."> 
-      <xsl:apply-templates select="@*|*|comment()|processing-instruction()|text()"/>
-    </xsl:copy>
-  </xsl:template>
-  <xsl:template match="//PersonInfo/Demographics/ReligiousEventList//text()[normalize-space(.)]">
-          <xsl:text>ZZREDACTED</xsl:text>
-  </xsl:template>
-  <xsl:template match="//PersonInfo/Demographics/ReligiousEventList/ReligiousEvent/Date">
-    <xsl:copy select="."> 
-      <xsl:apply-templates select="@*|*|comment()|processing-instruction()|text()"/>
-    </xsl:copy>
-  </xsl:template>
-  <xsl:template match="//PersonInfo/Demographics/ReligiousEventList/ReligiousEvent/Date//text()[normalize-space(.)]">
+  <xsl:template match="//sif:PersonInfo/sif:Demographics/sif:ReligiousEventList/sif:ReligiousEvent/sif:Date//text()[normalize-space(.)]">
           <xsl:text>1582-10-15</xsl:text>
   </xsl:template>
-  <xsl:template match="//PersonInfo/Demographics/ReligiousRegion">
+  <xsl:template match="//sif:PersonInfo/sif:Demographics/sif:ReligiousRegion">
     <xsl:copy select="."> 
       <xsl:apply-templates select="@*|*|comment()|processing-instruction()|text()"/>
     </xsl:copy>
   </xsl:template>
-  <xsl:template match="//PersonInfo/Demographics/ReligiousRegion//text()[normalize-space(.)]">
+  <xsl:template match="//sif:PersonInfo/sif:Demographics/sif:ReligiousRegion//text()[normalize-space(.)]">
           <xsl:text>ZZREDACTED</xsl:text>
   </xsl:template>
-  <xsl:template match="//PersonInfo/Demographics/VisaSubClass">
+  <xsl:template match="//sif:PersonInfo/sif:Demographics/sif:VisaSubClass">
     <xsl:copy select="."> 
       <xsl:apply-templates select="@*|*|comment()|processing-instruction()|text()"/>
     </xsl:copy>
   </xsl:template>
-  <xsl:template match="//PersonInfo/Demographics/VisaSubClass//text()[normalize-space(.)]">
+  <xsl:template match="//sif:PersonInfo/sif:Demographics/sif:VisaSubClass//text()[normalize-space(.)]">
           <xsl:text>ZZREDACTED</xsl:text>
   </xsl:template>
-  <xsl:template match="//PersonInfo/Demographics/VisaStatisticalCode">
+  <xsl:template match="//sif:PersonInfo/sif:Demographics/sif:VisaStatisticalCode">
     <xsl:copy select="."> 
       <xsl:apply-templates select="@*|*|comment()|processing-instruction()|text()"/>
     </xsl:copy>
   </xsl:template>
-  <xsl:template match="//PersonInfo/Demographics/VisaStatisticalCode//text()[normalize-space(.)]">
+  <xsl:template match="//sif:PersonInfo/sif:Demographics/sif:VisaStatisticalCode//text()[normalize-space(.)]">
           <xsl:text>ZZREDACTED</xsl:text>
   </xsl:template>
-  <xsl:template match="//PersonInfo/Demographics/ImmunizationCertificateStatus">
+  <xsl:template match="//sif:PersonInfo/sif:Demographics/sif:ImmunizationCertificateStatus">
     <xsl:copy select="."> 
       <xsl:apply-templates select="@*|*|comment()|processing-instruction()|text()"/>
     </xsl:copy>
   </xsl:template>
-  <xsl:template match="//PersonInfo/Demographics/ImmunizationCertificateStatus//text()[normalize-space(.)]">
+  <xsl:template match="//sif:PersonInfo/sif:Demographics/sif:ImmunizationCertificateStatus//text()[normalize-space(.)]">
           <xsl:text>ZZREDACTED</xsl:text>
   </xsl:template>
-  <xsl:template match="//PersonInfo/Demographics/CulturalBackground">
+  <xsl:template match="//sif:PersonInfo/sif:Demographics/sif:CulturalBackground">
     <xsl:copy select="."> 
       <xsl:apply-templates select="@*|*|comment()|processing-instruction()|text()"/>
     </xsl:copy>
   </xsl:template>
-  <xsl:template match="//PersonInfo/Demographics/CulturalBackground//text()[normalize-space(.)]">
+  <xsl:template match="//sif:PersonInfo/sif:Demographics/sif:CulturalBackground//text()[normalize-space(.)]">
           <xsl:text>ZZREDACTED</xsl:text>
   </xsl:template>
-  <xsl:template match="//PersonInfo/AddressList">
+  <xsl:template match="//sif:PersonInfo/sif:AddressList">
     <xsl:copy select="."> 
       <xsl:apply-templates select="@*|*|comment()|processing-instruction()|text()"/>
     </xsl:copy>
   </xsl:template>
-  <xsl:template match="//PersonInfo/AddressList//text()[normalize-space(.)]">
+  <xsl:template match="//sif:PersonInfo/sif:AddressList//text()[normalize-space(.)]">
           <xsl:text>ZZREDACTED</xsl:text>
   </xsl:template>
-  <xsl:template match="//PersonInfo/AddressList/Address/Country">
+  <xsl:template match="//sif:PersonInfo/sif:PhoneNumberList">
     <xsl:copy select="."> 
       <xsl:apply-templates select="@*|*|comment()|processing-instruction()|text()"/>
     </xsl:copy>
   </xsl:template>
-  <xsl:template match="//PersonInfo/AddressList/Address/Country//text()[normalize-space(.)]">
-          <xsl:text>ZZREDACTED</xsl:text>
-  </xsl:template>
-  <xsl:template match="//PersonInfo/PhoneNumberList">
-    <xsl:copy select="."> 
-      <xsl:apply-templates select="@*|*|comment()|processing-instruction()|text()"/>
-    </xsl:copy>
-  </xsl:template>
-  <xsl:template match="//PersonInfo/PhoneNumberList//text()[normalize-space(.)]">
-          <xsl:text>ZZREDACTED</xsl:text>
-  </xsl:template>
-  <xsl:template match="//PersonInfo/PhoneNumberList/PhoneNumber/ListedStatus">
-    <xsl:copy select="."> 
-      <xsl:apply-templates select="@*|*|comment()|processing-instruction()|text()"/>
-    </xsl:copy>
-  </xsl:template>
-  <xsl:template match="//PersonInfo/PhoneNumberList/PhoneNumber/ListedStatus//text()[normalize-space(.)]">
+  <xsl:template match="//sif:PersonInfo/sif:PhoneNumberList//text()[normalize-space(.)]">
           <xsl:text>ZZREDACTED</xsl:text>
   </xsl:template>
 </xsl:stylesheet>
