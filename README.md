@@ -1,5 +1,10 @@
 # sif_privacy_controls_xslt
 
+***DEPRECATED (RETIRED)***
+
+*This repository is obsolete and retired (archived). This is an unmantained repository. In particular, note that it is not being updated with security patches, including those for dependent libraries.*
+
+
 These are [XSLT](https://en.wikipedia.org/wiki/XSLT) and [XQuery Update](https://en.wikipedia.org/wiki/XQuery_Update_Facility) templates that can be used to filter SIF objects to comply with privacy requirements. These are put up as proof of concept.
  * XSLT is a widely deployed, if prolix, XML processing tool
  * XQuery Update is an extension of the original XQuery specification, finalised in 2011, to permit updates to XML documents; original XQuery would require rebuilding any XML document from scratch, and would not lend itself to this task readily. 
